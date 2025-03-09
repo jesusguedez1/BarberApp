@@ -1,0 +1,112 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    height: 10vh;
+    width: 100%;
+    background-color: #1b263b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 4vh;
+    gap: 4vh;
+    border-bottom: 1px solid #e0e1dd;
+}
+header a{
+    text-decoration: none;
+    color: #e0e1dd;
+    font-size: 1.3em;
+}
+.navegacion{
+    display: flex;
+    gap: 4vh;
+}
+.navegacion a{
+    height: 4vh;
+    width: 20vh;
+    display: flex;
+    justify-content: center;
+    border: none;
+    transition: border-bottom 0.3s;
+    text-decoration: none;
+}
+.navegacion a:hover{
+    border-bottom:1px solid #415a77;
+}
+.logo img{
+    height: 40vh;
+    width: 40vh;
+}
+.bodySection{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1b263b;
+}
+
+.login{
+    height: 75vh;
+    width: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+}
+.foto{
+    height: 35vh;
+    width: 35vh;
+    border: 4px solid #e0e1dd;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.foto img{
+    height: 28vh;
+    width: 14vh;
+}
+.formulario{
+height: 35vh;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+border:1px solid #e0e1dd ;
+border-radius: 10px;
+}
+.formulario form{
+  height: 28vh;
+  width: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vh;
+  
+}
+.formulario input{
+    width: 40vh;
+    height: 10vh;
+}
+.formulario label{
+    font-size: 1.2em;
+    color: #e0e1dd;
+
+}
+#email{
+    border: none;
+    
+}
+.enviar{
+    background: linear-gradient(to right, #415a77, #778da9);
+    color:#e0e1dd;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+}
+
+
