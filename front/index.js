@@ -11,3 +11,12 @@ const toggle = () => {
 
 profile.addEventListener("click", toggle);
 
+
+let cerrarSesion = document.querySelector(".cerrarSecionBtn");
+cerrarSesion.addEventListener("click", funcion);
+let funcion = function() {
+    console.log("cerrar sesion");
+}
+
+
+

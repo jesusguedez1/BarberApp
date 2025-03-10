@@ -13,12 +13,10 @@ window.addEventListener('load', function() {
             body: datos
         })
         .then(response => response.text()) 
-        .then(text => {
-            console.log("Respuesta del servidor:", text); 
-            return text ? JSON.parse(text) : {}; 
-        })
+        
         .then(datoss => {
             if (datoss.success) {
+                console.log(datoss);
                 window.location.href = "http://localhost:8012/BarberApp/front/index.html";
             }
             else {

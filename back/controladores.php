@@ -18,6 +18,7 @@ if(isset($_POST['usuario']) && isset($_POST['password'])) {
         if(password_verify($password, $fila['password'])) {  
             $response = ["success" => true, "message" => "Inicio exitoso"];
         } else {
+            echo($response);
             $response["message"] = "Contraseña incorrecta";
         }  
     } else {
