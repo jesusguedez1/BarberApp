@@ -12,7 +12,7 @@ window.addEventListener('load', function() {
             method: 'POST', 
             body: datos
         })
-        .then(response => response.text()) 
+        .then(response => response.json()) 
         
         .then(datoss => {
             if (datoss.success) {
@@ -20,7 +20,7 @@ window.addEventListener('load', function() {
                 window.location.href = "http://localhost:8012/BarberApp/front/index.html";
             }
             else {
-                alert("Usuario o contraseña incorrectos");
+                console.log("Usuario o contraseña incorrectos");
             }
         })
         .catch(error => console.error("Error en el fetch:", error));

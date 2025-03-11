@@ -13,10 +13,15 @@ profile.addEventListener("click", toggle);
 
 
 let cerrarSesion = document.querySelector(".cerrarSecionBtn");
-cerrarSesion.addEventListener("click", funcion);
-let funcion = function() {
-    console.log("cerrar sesion");
-}
+
+cerrarSesion.addEventListener("click", function() {
+    fetch("../back/logout.php") 
+        .then(() => {
+            window.location.href = "../front/login/login.html";
+        });
+})
+
+
 
 
 
