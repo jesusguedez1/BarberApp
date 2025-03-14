@@ -20,6 +20,8 @@ cerrarSesion.addEventListener("click", function() {
             window.location.href = "../front/login/login.html";
         });
 })
+ 
+
 
 
 

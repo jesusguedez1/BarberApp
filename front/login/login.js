@@ -1,11 +1,11 @@
 window.addEventListener('load', function() {
     let form = document.querySelector('form');
-    let usuario = document.querySelector('#email');
+    let gmail = document.querySelector('#email');
     let password = document.querySelector('#contraseña');
 
     function data(){
         let datos = new FormData();
-        datos.append('usuario', usuario.value);
+        datos.append('email', gmail.value);
         datos.append('password', password.value);
 
         fetch('/BarberApp/back/controladores.php', {
@@ -24,7 +24,8 @@ window.addEventListener('load', function() {
             }
         })
         .catch(error => console.error("Error en el fetch:", error));
-    }
+    }   
+    
 
     form.addEventListener('submit', function(e){
         e.preventDefault();
