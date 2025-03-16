@@ -17,7 +17,7 @@ let cerrarSesion = document.querySelector(".cerrarSecionBtn");
 cerrarSesion.addEventListener("click", function() {
     fetch("../back/logout.php") 
         .then(() => {
-            window.location.href = "../front/login/login.html";
+            window.location.href = "BarberApp/front/login/login.html";
         });
 })
  

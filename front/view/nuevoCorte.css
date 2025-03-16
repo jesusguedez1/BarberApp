@@ -1,0 +1,275 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header{
+    height: 10vh;
+    width: 100%;
+    background-image: linear-gradient(to right, #1b263b 40%, #778da9);
+    color: #e0e1dd;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.logo{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.singUp{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cerrarSecion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+.contenedorDeMenu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding-top: 14vh;
+    display: none;
+    z-index: 9;
+}
+.contenedorDeMenu button{
+    height: 4vh;
+    width: 20vh;
+    background-color: #1b263b;
+    color: #e0e1dd;
+    border: none;
+    border-bottom: 1px solid #0d1b2a;
+    cursor: pointer;
+}
+.contenedorDeMenu button:hover{
+    background-image: linear-gradient(to right, #0d1b2a, #1b263b);
+}
+.perfil{
+    height: 6vh;
+    width: auto;
+    min-width: 20vh;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: #e0e1dd;
+    border: none;
+    border-bottom: 1px solid #0d1b2a;
+    gap: 1vh;
+    cursor: pointer;
+    z-index: 100;
+}
+.perfil img{
+    height: 20px;
+    width: 20px;
+}
+.logo img{
+    height: 40vh;
+    width: 40vh;
+}
+.body{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.menu{
+    height: 100%;
+    width: 18%;
+    background-color: #1b263b;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    
+}
+.menu a{
+    height: 7vh;
+    width: 100%;
+    text-decoration: none;
+    color: #e0e1dd;
+    display: flex;
+    align-items: end;
+    border-bottom:1px solid #0d1b2a;
+    padding-left: 2vh;
+}
+.menu a:hover {
+    background: linear-gradient(to right, #0d1b2a, #1b263b);
+}
+.cuerpo{
+    height: 100%;
+    width: 88%;
+    background-color:#000000 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.generalCards{
+    height: 85%;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #93929215;
+    box-shadow: 0 5px 10px 5px #ffffff27;
+    border: 1px solid #e0e1dd1b;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+.generalCards::-webkit-scrollbar-thumb{
+    background-color: #1b263b;
+    border-radius: 0 10px 10px 0;
+}
+.generalCards::-webkit-scrollbar-track{
+    border-radius: 0 10px 10px 0;
+    
+}
+.generalCards::-webkit-scrollbar {
+    width: 10px; 
+}
+
+.card{
+    height: 40%;
+    width: 28%;
+    border: 1px solid #000;
+    display: flex;
+    margin: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #e0e1dd;
+    font-size: 1.3em;
+    padding-top: 8vh;
+    cursor: pointer;
+    border-radius: 8px;
+    
+}
+
+.card h4{
+    transform: scale(0);
+    font-size: 1em;
+    transition: transform 0.3s ease-in-out;
+    background-color: #000000a3;
+    margin-top: 3vh;
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card:hover h4{
+    transform: scale(1);
+}
+#card_1{
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) ,url(../imagenes/corteClasico.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: border 0.2s ease-in-out;
+}
+#card_1:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url(../imagenes/corteClasico.jpg) ;
+    border:1px solid #e0e1dd;
+}
+#card_2{
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) ,url(../imagenes/degradado.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: border 0.2s ease-in-out;
+}
+#card_2:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url(../imagenes/degradado.jpg) ;
+    border:1px solid #e0e1dd;
+}
+#card_3{
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) ,url(../imagenes/barba.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: border 0.2s ease-in-out;
+}
+#card_3:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url(../imagenes/barba.jpg) ;
+    border:1px solid #e0e1dd;
+}
+
+#card_4{
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) ,url(../imagenes/corteNiño.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: border 0.2s ease-in-out;
+}
+#card_4:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url(../imagenes/corteNiño.jpg) ;
+    border:1px solid #e0e1dd;
+}
+#card_5{
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) ,url(../imagenes/clasicoYBarba.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: border 0.2s ease-in-out;
+}
+#card_5:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url(../imagenes/clasicoYBarba.jpg) ;
+    border:1px solid #e0e1dd;
+}
+#card_6{
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) ,url(../imagenes/degradadoYBarba.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: border 0.2s ease-in-out;
+}
+#card_6:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url(../imagenes/degradadoYBarba.jpg) ;
+    border:1px solid #e0e1dd;
+}
+#card_7{
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) ,url(../imagenes/trensas.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: border 0.2s ease-in-out;
+}
+#card_7:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url(../imagenes/trensas.jpg) ;
+    border:1px solid #e0e1dd;
+}
+#card_8{
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) ,url(../imagenes/tintePelo.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: border 0.2s ease-in-out;
+}
+#card_8:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url(../imagenes/tintePelo.jpg) ;
+    border:1px solid #e0e1dd;
+}
+#card_9{
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)) ,url(../imagenes/diseñoDibujo.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: border 0.2s ease-in-out;
+}
+#card_9:hover{
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url(../imagenes/diseñoDibujo.jpg) ;
+    border:1px solid #e0e1dd;
+}
