@@ -82,6 +82,7 @@ header{
     width: 100%;
     display: flex;
     flex-direction: row;
+    z-index: 1;
 }
 .menu{
     height: 100%;
@@ -272,4 +273,51 @@ header{
 #card_9:hover{
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)) ,url(../imagenes/diseñoDibujo.jpg) ;
     border:1px solid #e0e1dd;
+}
+
+/*Comandas*/
+
+.comanda{
+    height: 100vh;
+    width: 100%;
+    background-color: #0d1b2a9b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transform: scale(0);
+    transition: transform 0.3s ease-in-out;
+}    
+.contenedorComandas{
+    height: 60%;
+    width: 60%;
+    background-color: #222937e2;
+    border-radius: 15px;
+}
+.closepContainer{
+    height: 6%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.1em;
+}
+.closepContainer h1{
+    height: 3.5vh;
+    width: 3.5vh;
+    border: 2px solid #ffffff;
+    color: #fff;
+    background-color: #ff2b2bef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease-in-out;
+}
+.closepContainer h1:hover{
+    transform: rotate(180deg);
 }
