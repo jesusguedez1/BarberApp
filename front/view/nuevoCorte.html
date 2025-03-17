@@ -76,10 +76,42 @@
 <section class="comanda">
     <div class="contenedorComandas">
         <div class="closepContainer"><h1>X</h1></div>
-        <div class="bodyContainer"></div>
+        <div class="bodyContainer">
+            <div class="resumenVenta">
+                <div class="comandaDeServico">
+                    <h2>Comanda del servicio</h2>
+                </div>
+                <div class="resumenDeServicio">
+                    <div class="caracteristicasServicio">
+                    <h4> Tipo de servicio: <span id="servicio" class="closepBtn"></span></h4>
+                    <h4> Precio: <span id="precio" class="closepBtn"></span></h4>
+                    <h4> Descripcion: <span id="descripcion" class="closepBtn"></span></h4>
+                    <h4> Incluye: <span id="incluye" class="closepBtn"></span></h4>
+                </div>
+                <div class="formularioServicio">
+                    <form action="post" name="formServicio" id="formServicios">
+                        <label for="cliente">Nombre del cliente</label>
+                        <input type="text" name="cliente" id="nombreCliente" required>
+                        <label for="barbero">Nombre del barbero</label>
+                        <input type="text" name="barbero" id="nombreBarber" required>
+                        <label for="pago">Tipo de pago</label>
+                        <select name="pago" id="TipoPago" required>
+                            <option value="">--Selecciona metodo de pago--</option>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="yape">Yape</option>
+                            <option value="plin">Plin</option>
+                            <option value="pos">P.O.S</option>
+                            <option value="transferencia">Transferencia</option>
+                        </select>
+                    </form>
+                </div>
+                </div>
+            </div>
+            <div class="totalVenta"></div>
+        </div>
     </div>
 </section>
-<script src="../index.js"></script>
 <script src="../verificarSesion.js"></script>
 <script src="../view/nuevoCorte.js"></script>
+<script src="../index.js"></script>
 </html>

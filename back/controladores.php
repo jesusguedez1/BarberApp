@@ -26,15 +26,13 @@ if(isset($_POST['email']) && isset($_POST['password'])) {
                 "success" => true, 
                 "message" => "Inicio exitoso",
                 "name" => $fila['name']
-            ];
-            
+            ];  
         } else {
             $response["message"] = "Contraseña incorrecta";
         }  
     } else {
         $response["message"] = "Usuario no encontrado";
     }
-
 }
 
 echo json_encode($response);

@@ -12,14 +12,7 @@ const toggle = () => {
 profile.addEventListener("click", toggle);
 
 
-let cerrarSesion = document.querySelector(".cerrarSecionBtn");
 
-cerrarSesion.addEventListener("click", function() {
-    fetch("../back/logout.php") 
-        .then(() => {
-            window.location.href = "BarberApp/front/login/login.html";
-        });
-})
  
 
 
