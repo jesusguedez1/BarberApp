@@ -297,6 +297,9 @@ header{
     background-color: #222937e2;
     border-radius: 15px;
 }
+.bodyContainer{
+    height: 75%;
+}
 .closepContainer{
     height: 6%;
     width: 100%;
@@ -320,4 +323,69 @@ header{
 }
 .closepContainer h1:hover{
     transform: rotate(180deg);
+}
+.comandaDeServico{
+    height: 14%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e1dd;
+
+}
+.resumenDeServicio{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.resumenVenta{
+    height: 85%;
+    width: 100%;
+}
+.caracteristicasServicio{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-left: 5vh;
+}
+.caracteristicasServicio h4{
+    color: #e0e1dd;
+    font-size: 1.1em;
+}
+.closepBtn{
+    color: #fff;
+    font-size: 0.9em;
+}
+.formularioServicio{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#formServicios{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#formServicios label{
+    color: #e0e1dd;
+    font-size: 1.2em;
+}
+#formServicios input{
+    height: 3.5vh;
+    width: 35vh;
+    border-radius: 7px;
+}
+#formServicios select{
+    height: 3.5vh;
+    width: 35vh;
+    border-radius: 7px;
 }
