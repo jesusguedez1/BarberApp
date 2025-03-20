@@ -294,7 +294,7 @@ header{
 .contenedorComandas{
     height: 60%;
     width: 60%;
-    background-color: #222937e2;
+    background-image: linear-gradient(to right, #0b17239b, #1b3b5d9b);
     border-radius: 15px;
 }
 .bodyContainer{
@@ -388,4 +388,25 @@ header{
     height: 3.5vh;
     width: 35vh;
     border-radius: 7px;
+}
+.enviarAResumen{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.btnEviar{
+    height: 4vh;
+    width: 25vh;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: #3c4e70;
+    color: #e0e1dd;
+    border: none;
+    cursor: pointer; 
+    transition: background-image 0.2s ease-in-out;
+}
+.btnEviar:hover{
+    background-image: linear-gradient(to right, #1b263b, #3c4e70);
 }
