@@ -74,6 +74,14 @@
     </section>
 </body>
 <section class="comanda">
+    
+    <div class="aprobado">
+        <div class="divAprobado">
+            <img src="../imagenes/iconsCheck.png" alt="">
+            <h4>Servicio Creado</h4>
+        </div>
+    </div>
+
     <div class="contenedorComandas">
         <div class="closepContainer"><h1>X</h1></div>
         <div class="bodyContainer">
@@ -89,12 +97,12 @@
                     <h4> Incluye: <span id="incluye" class="closepBtn"></span></h4>
                 </div>
                 <div class="formularioServicio">
-                    <form action="post" name="formServicio" id="formServicios">
-                        <label for="cliente">Nombre del cliente</label>
+                    <form action="POST" name="formServicio" id="formServicios">
+                        <label for="nombreCliente">Nombre del cliente</label>
                         <input type="text" name="cliente" id="nombreCliente" required>
-                        <label for="barbero">Nombre del barbero</label>
+                        <label for="nombreBarber">Nombre del barbero</label>
                         <input type="text" name="barbero" id="nombreBarber" required>
-                        <label for="pago">Tipo de pago</label>
+                        <label for="TipoPago">Tipo de pago</label>
                         <select name="pago" id="TipoPago" required>
                             <option value="">--Selecciona metodo de pago--</option>
                             <option value="efectivo">Efectivo</option>
@@ -108,12 +116,13 @@
                 </div>
             </div>
             <div class="enviarAResumen">
-                <button type="button" class="btnEviar">Crear Servicio</button>
+                <button  class="btnEviar">Crear Servicio</button>
             </div>
         </div>
     </div>
 </section>
-<script src="../verificarSesion.js"></script>
+
+
 <script src="../view/nuevoCorte.js"></script>
 <script src="../index.js"></script>
 </html>
