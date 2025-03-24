@@ -101,6 +101,7 @@ header{
     align-items: end;
     border-bottom:1px solid #0d1b2a;
     padding-left: 2vh;
+    font-size: 1.25em;
 }
 .menu a:hover {
     background: linear-gradient(to right, #0d1b2a, #1b263b);
@@ -129,6 +130,9 @@ header{
 .cuerpoDeContenedor{
     height: 85%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .total{
     height: 5%;
@@ -143,13 +147,32 @@ header{
     width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
-li{
+.venta-item{
     list-style: none;
-    height: 10%;
+    height: 6%;
     width: 100%;
     display: flex;
     flex-direction: row;
+    font-size: 1.2em;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+}
+.eliminarBtn{
+    height: 2.1vh;
+    width: 6vh;
+    font-size: 0.55em;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #da1212cb;
+    cursor: pointer;
+    transform: scale(1);
+}
+.eliminarBtn:active{
+    transform: scale(0.9);
+    background-color: #c41515cb;
 }

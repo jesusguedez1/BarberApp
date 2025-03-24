@@ -101,6 +101,7 @@ header{
     align-items: end;
     border-bottom:1px solid #0d1b2a;
     padding-left: 2vh;
+    font-size: 1.25em;
 }
 .menu a:hover {
     background: linear-gradient(to right, #0d1b2a, #1b263b);

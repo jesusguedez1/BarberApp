@@ -1,70 +1,75 @@
-const comandas = document.querySelector('.comanda');
-let formu = document.querySelector('#formServicios');
+document.addEventListener("DOMContentLoaded", () => {
+    const comandas = document.querySelector('.comanda');
+    const formu = document.querySelector('#formServicios');
+    const botonEnviar = document.querySelector('.btnEviar');
+    const check = document.querySelector('.aprobado');
 
-const cerrarPopup = () => {   
-    comandas.style.transform = 'scale(0)';
-    document.querySelector("#servicio").innerHTML = '';   
-    document.querySelector("#precio").innerHTML = '';
-    document.querySelector("#descripcion").innerHTML = '';
-    document.querySelector("#incluye").innerHTML = '';
-    formu.reset();
-};
-
-let botonEnviar = document.querySelector('.btnEviar');
-botonEnviar.addEventListener('click', (e) => {  
-    e.preventDefault();
-
-    let nombreCliente = document.querySelector('#nombreCliente')?.value 
-    let nombreBarbero = document.querySelector('#nombreBarber')?.value 
-    let tipoDePago = document.querySelector('#TipoPago')?.value 
-
-    let serv = document.querySelector("#servicio")?.textContent.trim()  
-    let price = document.querySelector("#precio")?.textContent.trim() 
-
-    let url = `http://localhost:8012/BarberApp/back/apiCortes.php?corte=${encodeURIComponent(serv)}&nbarber=${encodeURIComponent(nombreBarbero)}&ncliente=${encodeURIComponent(nombreCliente)}&tPago=${encodeURIComponent(tipoDePago)}&precio=${encodeURIComponent(price)}`;
-    
-    console.log("la url es:" , url);
-
-    console.log("Enviando datos a la API con GET:", url);
-    
-    fetch(url, {
-        method: "GET",
-    })
-    .then(resp => resp.json())
-    .then(datoss => console.log(datoss))
-    .catch(error => console.log(error));
-
-    let check = document.querySelector('.aprobado');
-    check.style.transform = "scale(1)"
-    setTimeout(()=> {
-        check.style.transform = "scale(0)";
+    const cerrarPopup = () => {   
         comandas.style.transform = 'scale(0)';
-        cerrarPopup();
-    }, 1500);
-});
+        document.querySelector("#servicio").textContent = '';   
+        document.querySelector("#precio").textContent = '';
+        document.querySelector("#descripcion").textContent = '';
+        document.querySelector("#incluye").textContent = '';
+        formu.reset();
+    };
 
+    document.querySelector('.closepContainer h1').addEventListener('click', cerrarPopup);
 
-const card = document.querySelectorAll('.card');
-fetch("../JSON/servicioDeCortes.json")
-.then(response => response.json())
-.then(data => {
-    card.forEach(e => {
-        let funcionCard = function (event) { 
-            comandas.style.transform = 'scale(1)';
+    botonEnviar.addEventListener('click', (e) => {  
+        e.preventDefault();
 
-            let cardElement = event.target.closest('.card'); 
-            let datos = cardElement.dataset.id;
+        let nombreCliente = document.querySelector('#nombreCliente')?.value.trim();
+        let nombreBarbero = document.querySelector('#nombreBarber')?.value.trim();
+        let tipoDePago = document.querySelector('#TipoPago')?.value;
+        let serv = document.querySelector("#servicio")?.textContent.trim();
+        let price = document.querySelector("#precio")?.textContent.trim();
 
-            document.querySelector("#servicio").innerHTML = data.servicioDeCortes[datos - 1].nombre;    
-            document.querySelector("#precio").innerHTML = data.servicioDeCortes[datos - 1].precio;
-            document.querySelector("#descripcion").innerHTML = data.servicioDeCortes[datos - 1].descripcion;
-            document.querySelector("#incluye").innerHTML = data.servicioDeCortes[datos - 1].servicio;
+        if (!nombreCliente || !nombreBarbero || !tipoDePago || !serv || !price) {
+            console.error("Faltan datos por completar.");
+            return;
+        }
+
+        const dataFinal = {
+            corte: serv,
+            nbarber: nombreBarbero,
+            ncliente: nombreCliente,
+            tPago: tipoDePago,
+            precio: price,
         };
 
-        e.addEventListener('click', funcionCard); 
+        localStorage.setItem("ventaActual", JSON.stringify(dataFinal));
+
+        const script = document.createElement("script");
+        script.src = "./resumenVenta.js";
+        document.body.appendChild(script);
+
+        check.style.transform = "scale(1)";
+        setTimeout(() => {
+            check.style.transform = "scale(0)";
+            cerrarPopup();
+        }, 1500);
     });
 
-    const closepButton = document.querySelector('.closepContainer h1');
-    closepButton.addEventListener('click', cerrarPopup);
-});
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', function () {
+            let id = this.dataset.id; 
 
+            fetch(`http://localhost:8012/BarberApp/back/getServicios.php?id=${id}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        console.error("Error:", data.error);
+                        return;
+                    }
+
+                    document.querySelector("#servicio").textContent = data.nombre;
+                    document.querySelector("#precio").textContent = data.precio;
+                    document.querySelector("#descripcion").textContent = data.descripcion;
+                    document.querySelector("#incluye").textContent = data.servicio;
+
+                    comandas.style.transform = 'scale(1)';
+                })
+                .catch(error => console.error("Error al obtener datos:", error));
+        });
+    });
+});

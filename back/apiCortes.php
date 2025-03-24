@@ -1,11 +1,19 @@
 <?php
-header("Content-Type: application/json");
 
+$validTokens = ["12345abcd"]; 
+$headers = getallheaders();
+if (!isset($headers["Authorization"])) {
+    http_response_code(403);
+    echo json_encode(["error" => "Acceso denegado"]);
+    exit;
+}
+$token = str_replace("Bearer ", "", $headers["Authorization"]);
+if (!in_array($token, $validTokens)) {
+    http_response_code(403);
+    echo json_encode(["error" => "Token no válido"]);
+    exit;
+}
+$input = json_decode(file_get_contents("php://input"), true);
 
-echo json_encode([
-    "status" => "debug",
-    "GET" => $_GET,
-    "POST" => $_POST,
-    "REQUEST" => $_REQUEST
-], JSON_PRETTY_PRINT);
+echo json_encode(["success" => "Datos recibidos", "data" => $input]);
 ?>

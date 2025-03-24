@@ -21,6 +21,11 @@ window.addEventListener('load', function() {
             }
             else {
                 console.log("Usuario o contraseña incorrectos");
+                let noEntrar = document.querySelector(".noIngresar")
+                noEntrar.style.transform ='scale(1)'
+                setTimeout(()=>{
+                    noEntrar.style.transform ='scale(0)'
+                }, 5000);
             }
         })
         .catch(error => console.error("Error en el fetch:", error));
