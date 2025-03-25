@@ -13,25 +13,62 @@ document.addEventListener("DOMContentLoaded", () => {
     const mostrarResumen = () => {
         let ventas = obtenerDatosVenta();
         let totalList = document.querySelector(".resumenDeVenta");
-
+    
         if (!totalList) return;
-
+    
         totalList.innerHTML = "";
-
-        ventas.forEach(datos => {
+    
+        let totalResumen = 0; 
+    
+        ventas.forEach((datos, index) => {
             let createList = document.createElement("li");
             createList.classList.add("venta-item");
-            createList.textContent = `Cliente: ${datos.ncliente} - Barbero: ${datos.nbarber} - Servicio: ${datos.corte} - Precio: $${datos.precio} - Tipo de Pago: ${datos.tPago}`;
-        
+            createList.innerHTML = `Barbero: ${datos.nbarber} <br> Cliente: ${datos.ncliente} <br> Servicio: ${datos.corte} <br> Tipo de Pago: ${datos.tPago} <br>  Precio: S/${datos.precio}`;
+    
+            let dineroVentas = parseFloat(datos.precio); 
+            totalResumen += dineroVentas; 
+    
             let createButton = document.createElement("button");
-            createButton.textContent = "Eliminar";
+            createButton.innerHTML = '<img src="../imagenes/iconsBasura.png" alt="Eliminar">';
             createButton.classList.add("eliminarBtn");
-        
-            createList.appendChild(createButton); 
+    
+            createList.appendChild(createButton);
             totalList.appendChild(createList);
-        });
-    };
+            
+            createButton.addEventListener("click", () => {
+                let containerElm = document.querySelector(".containerEliminar");
+                containerElm.style.transform = "scale(1)";
+                
+                let retroceder = document.querySelector(".volverAtras");
+                retroceder.addEventListener("click", () => {
+                    containerElm.style.transform = "scale(0)";
+                });
 
+                let eliminarServ = document.querySelector(".eliminarRegistro");
+                eliminarServ.addEventListener("click", () => {
+                    let ventasActualizadas = obtenerDatosVenta().filter((_, i) => i !== index);
+    
+                    totalResumen -= parseFloat(datos.precio);
+    
+                    localStorage.setItem("ventasGuardadas", JSON.stringify(ventasActualizadas));
+    
+                    createList.remove();
+    
+                    let totalElement = document.querySelector(".totalV");
+                    if (totalElement) {
+                        totalElement.textContent = `Total: S/${totalResumen.toFixed(2)}`;
+                    }
+                    containerElm.style.transform = "scale(0)";
+                });
+            });
+        });
+    
+        let totalElement = document.querySelector(".totalV");
+        if (totalElement) {
+            totalElement.textContent = `Total: S/${totalResumen.toFixed(2)}`;
+        }
+    };
+    
     mostrarResumen();
 
     const nuevaVenta = JSON.parse(localStorage.getItem("ventaActual"));

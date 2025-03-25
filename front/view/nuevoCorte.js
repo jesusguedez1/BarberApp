@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         let nombreCliente = document.querySelector('#nombreCliente')?.value.trim();
-        let nombreBarbero = document.querySelector('#nombreBarber')?.value.trim();
+        let nombreBarbero = document.querySelector('#nombreBarber')?.value;
         let tipoDePago = document.querySelector('#TipoPago')?.value;
         let serv = document.querySelector("#servicio")?.textContent.trim();
         let price = document.querySelector("#precio")?.textContent.trim();

@@ -101,7 +101,13 @@
                         <label for="nombreCliente">Nombre del cliente</label>
                         <input type="text" name="cliente" id="nombreCliente" required>
                         <label for="nombreBarber">Nombre del barbero</label>
-                        <input type="text" name="barbero" id="nombreBarber" required>
+                        <select name="barbero" id="nombreBarber">
+                            <option value="">--Nombre del barbero--</option>
+                            <option value="Jose">Jose</option>
+                            <option value="Manuel">Manuel</option>
+                            <option value="Daniel">Daniel</option>
+                            <option value="Cristian">Cristian</option>
+                        </select>
                         <label for="TipoPago">Tipo de pago</label>
                         <select name="pago" id="TipoPago" required>
                             <option value="">--Selecciona metodo de pago--</option>
